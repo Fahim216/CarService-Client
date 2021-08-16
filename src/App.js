@@ -14,6 +14,7 @@ import Dashboard from "./Dashboard/Dashboard/Dashboard";
 import Orders from "./Dashboard/Orders/Orders";
 import Review from "./Home/Review/Review";
 import AddWorker from "./Dashboard/AddWorker/AddWorker";
+import DeleteData from "./Dashboard/DeleteData/DeleteData";
 
 
 export const UserContext=createContext();
@@ -42,6 +43,9 @@ function App() {
        <Route path='/login'>
          <Login></Login>
 
+       </Route>
+       <Route path='/delete'>
+         <DeleteData></DeleteData>
        </Route>
        <PrivateRoute path='/addWorker'>
          <AddWorker></AddWorker>

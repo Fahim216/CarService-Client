@@ -17,9 +17,9 @@ const ReviewCard = () => {
             {review.map(reviews=>(
                   <div className="col-md-4 text-black service-info">
                       <div className="mt-4 shadow-lg p-3 mb-5 bg-white rounded">
-                          <h1>{reviews.name}</h1>
-                          <h5>{reviews.work}</h5>
-                          <p className="text-success">{reviews.opinion}</p>
+                          <h5>{reviews.opinion}</h5>
+                         <p className="text-success">{reviews.name}({reviews.work})</p>
+                       <h1 className="fs-1"> *****</h1>
                       </div></div>
             ))}
       

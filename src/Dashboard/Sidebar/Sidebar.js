@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faSignOutAlt, faCalendar, faGripHorizontal, faUsers } from '@fortawesome/free-solid-svg-icons';
 import {  faFileAlt } from '@fortawesome/free-regular-svg-icons'
 import { Link } from "react-router-dom";
+import { UserContext } from "./../../App";
 
 const Sidebar = () => {
+    const [loggedInUser,setLoggedInUser]=useContext(UserContext);
     return (
-        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{height:"100vh"}}>
+        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-2" style={{height:"100vh"}}>
         <ul className="list-unstyled">
             <li>
                 <Link to="/orders" className="text-white">
-                    <FontAwesomeIcon icon={faGripHorizontal} /> <span>Book Now</span> 
+                    <FontAwesomeIcon icon={faGripHorizontal} /> <span>Order Now</span> 
                 </Link>
             </li>
             <li>
                 <Link to="/dashboard" className="text-white">
-                    <FontAwesomeIcon icon={faCalendar} /> <span>Dashboard</span> 
+                    <FontAwesomeIcon icon={faCalendar} /> <span>OrderList</span> 
                 </Link>
             </li>
           <div>
@@ -25,16 +27,20 @@ const Sidebar = () => {
                     <FontAwesomeIcon icon={faUsers} /> <span>Give Review</span>
                 </Link>
             </li>
-            <li>
-                <Link to="/dashboard" className="text-white">
-                    <FontAwesomeIcon icon={faFileAlt} /> <span>Dashboard</span>
-                </Link>
-            </li>
-            <li>
+            
+          {    loggedInUser.email===`ahmedfahim758@gmail.com` &&<div>
+                  <li>
                 <Link to="/addWorker" className="text-white">
                     <FontAwesomeIcon icon={faFileAlt} /> <span>AddWorker</span>
                 </Link>
             </li>
+            <li>
+                <Link to="/delete" className="text-white">
+                    <FontAwesomeIcon icon={faFileAlt} /> <span>DeleteOrder</span>
+                </Link>
+            </li>
+            </div>}
+          
             </div>
             <li>
                 <Link to="/doctor/setting" className="text-white" >
