@@ -7,7 +7,7 @@ const ReviewCard = () => {
     const[review,SetReview]=useState([])
     
     useEffect(()=>{
-     fetch(`http://localhost:5000/review`)
+     fetch(`https://car-service12.herokuapp.com/review`)
      .then(res=>res.json())
      .then(data=>SetReview(data))
     },[])

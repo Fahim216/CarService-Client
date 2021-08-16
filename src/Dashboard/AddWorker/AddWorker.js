@@ -22,7 +22,7 @@ const AddWorker = () => {
     formData.append('email', info.email);
     formData.append('description', info.description);
   
-    fetch('http://localhost:5000/addWorker', {
+    fetch('https://car-service12.herokuapp.com/addWorker', {
       method: 'POST',
       body: formData
     })

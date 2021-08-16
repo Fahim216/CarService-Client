@@ -31,7 +31,7 @@ import { useState,useEffect } from "react";
 const Testimonial = () => {
     const[worker,setWorker]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/workers`)
+        fetch(`https://car-service12.herokuapp.com/workers`)
         .then(res=>res.json())
         .then(data=>setWorker(data))
        },[])

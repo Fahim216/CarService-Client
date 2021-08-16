@@ -10,7 +10,7 @@ const Dashboard = () => {
     const [order,setOrder]=useState([]);
     const [loggedInUser,setLoggedInUser]=useContext(UserContext);
     useEffect(()=>{
-        fetch(`http://localhost:5000/allOrders`)
+        fetch(`https://car-service12.herokuapp.com/allOrders`)
         .then(res=>res.json())
         .then(data=>setOrder(data))
     },[])

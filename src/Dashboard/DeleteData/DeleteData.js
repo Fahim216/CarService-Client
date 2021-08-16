@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const DeleteData = () => {
     const handleClick=(id) => {
-        fetch(`http://localhost:5000/delete/${id}`,{
+        fetch(`https://car-service12.herokuapp.com/delete/${id}`,{
             method: 'DELETE',
         })
        .then(res=>res.json())
@@ -13,7 +13,7 @@ const DeleteData = () => {
     }
     const [order,setOrder]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/allOrders`)
+        fetch(`https://car-service12.herokuapp.com/allOrders`)
         .then(res=>res.json())
         .then(data=>setOrder(data))
     },[])

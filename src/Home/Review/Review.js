@@ -10,7 +10,7 @@ const Review = () => {
     const onSubmit = data => {
       
         
-        fetch('http://localhost:5000/addReview',{
+        fetch('https://car-service12.herokuapp.com/addReview',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ const Orders = () => {
   const [info,setInfo]=useState([])
   const handleSubmit=()=> {
     console.log()
-    fetch('http://localhost:5000/orders',{
+    fetch('https://car-service12.herokuapp.com/orders',{
       method: 'POST',
       headers:{ 
         'Content-Type': 'application/json'
